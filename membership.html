@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Regular Gym - Membership</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #38e07b;
+      }
+      body {
+        font-family: 'Spline Sans', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-[#122118] text-white">
+<div class="flex flex-col min-h-screen">
+<div id="navbar"></div>
+<main class="flex-grow">
+<section class="py-16 sm:py-24">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">
+                Find Your Perfect <span class="text-[var(--primary-color)]">Fit</span>
+</h1>
+<p class="mt-4 text-lg text-[#96c5a9]">
+                Choose the plan that aligns with your fitness goals and lifestyle. Start your journey with us today.
+              </p>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="flex flex-col rounded-2xl border border-[#264532] bg-[#1b3124] p-8 transition-all duration-300 hover:border-[var(--primary-color)] hover:shadow-2xl hover:shadow-[var(--primary-color)]/10">
+<div class="flex-grow">
+<h3 class="text-2xl font-bold">Basic</h3>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tight">$29</span>
+<span class="text-lg font-medium text-[#96c5a9]">/month</span>
+</div>
+<ul class="mt-8 space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Access to gym floor</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Group fitness classes</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">1 Personal training session</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Locker room access</span>
+</li>
+</ul>
+</div>
+<a class="mt-8 block w-full rounded-full bg-[#264532] py-3.5 text-center text-sm font-bold text-white transition-colors hover:bg-[var(--primary-color)] hover:text-[#122118]" href="#">
+                  Choose Basic
+                </a>
+</div>
+<div class="flex flex-col rounded-2xl border-2 border-[var(--primary-color)] bg-[#1b3124] p-8 relative overflow-hidden shadow-2xl shadow-[var(--primary-color)]/20">
+<div class="absolute top-0 right-0 -mr-16 mt-8">
+<div class="bg-[var(--primary-color)] text-[#122118] text-xs font-bold uppercase tracking-wider py-1.5 px-16 transform rotate-45">Best Value</div>
+</div>
+<div class="flex-grow">
+<h3 class="text-2xl font-bold">Premium</h3>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tight">$49</span>
+<span class="text-lg font-medium text-[#96c5a9]">/month</span>
+</div>
+<ul class="mt-8 space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">All Basic features</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Unlimited group fitness classes</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">3 Personal training sessions</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Towel service</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">2 Guest passes per month</span>
+</li>
+</ul>
+</div>
+<a class="mt-8 block w-full rounded-full bg-[var(--primary-color)] py-3.5 text-center text-sm font-bold text-[#122118] transition-transform hover:scale-105" href="#">
+                  Choose Premium
+                </a>
+</div>
+<div class="flex flex-col rounded-2xl border border-[#264532] bg-[#1b3124] p-8 transition-all duration-300 hover:border-[var(--primary-color)] hover:shadow-2xl hover:shadow-[var(--primary-color)]/10">
+<div class="flex-grow">
+<h3 class="text-2xl font-bold">Elite</h3>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tracking-tight">$79</span>
+<span class="text-lg font-medium text-[#96c5a9]">/month</span>
+</div>
+<ul class="mt-8 space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">All Premium features</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Unlimited personal training</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Exclusive gym area access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">Priority booking</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--primary-color)]"> check_circle </span>
+<span class="text-sm text-[#c7e5d3]">4 Guest passes per month</span>
+</li>
+</ul>
+</div>
+<a class="mt-8 block w-full rounded-full bg-[#264532] py-3.5 text-center text-sm font-bold text-white transition-colors hover:bg-[var(--primary-color)] hover:text-[#122118]" href="#">
+                  Choose Elite
+                </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#1b3124]">
+<div class="container mx-auto px-6 py-8">
+<div class="flex flex-col items-center justify-between md:flex-row gap-6">
+<div class="flex items-center gap-3">
+<svg class="h-6 w-6 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535_footer)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535_footer"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h2 class="text-lg font-bold">Regular Gym</h2>
+</div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+<a class="text-sm text-[#96c5a9] hover:text-[var(--primary-color)] transition-colors" href="#">About Us</a>
+<a class="text-sm text-[#96c5a9] hover:text-[var(--primary-color)] transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-[#96c5a9] hover:text-[var(--primary-color)] transition-colors" href="#">Terms of Service</a>
+</nav>
+<p class="text-sm text-[#96c5a9]">© 2024 Regular Gym. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  fetch('navbar.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('navbar').innerHTML = html;
+    })
+    .catch(err => console.error('Failed to load navbar:', err));
+</script>
+</body></html>
