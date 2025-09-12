@@ -3,9 +3,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <title>Strathfield gym</title>
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 <body>
 <div class="relative flex size-full min-h-screen flex-col bg-[#122118] dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
@@ -291,13 +291,11 @@
     .then(r => r.text())
     .then(html => {
       document.getElementById('navbar').innerHTML = html;
+      // Re-initialize navbar JS after loading
+      if (window.initNavbar) window.initNavbar();
     })
     .catch(err => console.error('Failed to load navbar:', err));
 </script>
-</body></html>
-    })
-    .catch(err => console.error('Failed to load navbar:', err));
-</script>
-
+<script src="navbar.js"></script>
 </body></html>
 
