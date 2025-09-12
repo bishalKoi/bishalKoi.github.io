@@ -1,95 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strathfield Gym</title>
+
+  <!-- Tailwind (CDN for demo; for prod, use a build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;700" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
 </head>
-<body>
-    <header class="sticky top-0 z-20 bg-[#122118] border-b border-[#264532] px-4 sm:px-8 md:px-10 py-3 sm:py-4 flex items-center justify-between">
-        <div class="flex items-center gap-3 text-white">
-          <div class="w-8 h-8">
-            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_6_535)">
-                <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
-              </g>
-              <defs>
-                <clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
-              </defs>
-            </svg>
-          </div>
-          <h2 class="text-white text-lg sm:text-xl font-bold leading-tight tracking-[-0.015em]">Strathfield Gym</h2>
-        </div>
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-4 lg:gap-9">
-            <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="index.html">Home</a>
-            <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="services.html">Services</a>
-            <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="trainers.html">Trainers</a>
-            <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="membership.html">Membership</a>
-            <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="timetable.html">Timetable</a>
-            <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="contact.html">Contact</a>
-          </nav>
-          <button class="hidden md:flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 sm:h-12 px-5 sm:px-6 bg-[#38e07b] text-[#122118] text-sm sm:text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-all">
-            <span class="truncate">Join Now</span>
-          </button>
-          <!-- Hamburger for mobile -->
-          <button id="navbar-toggle" class="md:hidden flex items-center justify-center text-white focus:outline-none">
-            <span class="material-symbols-outlined text-3xl">menu</span>
-          </button>
-      </header>
-      <!-- Mobile menu (hidden by default) -->
-      <div id="navbar-mobile" class="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#122118] z-30 shadow-lg transform translate-x-full transition-transform duration-300 md:hidden">
-        <div class="flex items-center justify-between px-4 py-4 border-b border-[#264532]">
-          <div class="flex items-center gap-3 text-white">
-            <div class="w-8 h-8">
-              <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_6_535)">
-                  <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
-                </defs>
-              </svg>
-            </div>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Strathfield Gym</h2>
-          </div>
-          <button id="navbar-close" class="text-white focus:outline-none">
-            <span class="material-symbols-outlined text-3xl">close</span>
-          </button>
-        </div>
-        <nav class="flex flex-col gap-2 px-6 py-6">
-          <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="index.html">Home</a>
-          <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="services.html">Services</a>
-          <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="trainers.html">Trainers</a>
-          <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="membership.html">Membership</a>
-          <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="timetable.html">Timetable</a>
-          <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="contact.html">Contact</a>
-          <a class="flex min-w-[90px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-[#38e07b] text-[#122118] text-sm font-bold tracking-wide transition-transform hover:scale-105 mt-4" href="#">
-            <span class="truncate">Join Now</span>
-          </a>
-        </nav>
+<body class="bg-[#0e1a13] text-white">
+  <!-- Header -->
+  <header class="sticky top-0 z-20 bg-[#122118] border-b border-[#264532] px-4 sm:px-8 md:px-10 py-3 sm:py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3 text-white">
+      <div class="w-8 h-8">
+        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+          <g clip-path="url(#clip0_6_535)">
+            <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+          </defs>
+        </svg>
       </div>
-      <script>
-        // Hamburger menu logic
-        const toggleBtn = document.getElementById('navbar-toggle');
-        const closeBtn = document.getElementById('navbar-close');
-        const mobileMenu = document.getElementById('navbar-mobile');
-        function openMenu() {
-          mobileMenu.style.transform = 'translateX(0)';
-        }
-        function closeMenu() {
-          mobileMenu.style.transform = 'translateX(100%)';
-        }
-        if (toggleBtn && mobileMenu) {
-          toggleBtn.onclick = openMenu;
-        }
-        if (closeBtn && mobileMenu) {
-          closeBtn.onclick = closeMenu;
-        }
-        // Hide mobile menu on navigation
-        mobileMenu && mobileMenu.querySelectorAll('a').forEach(a => {
-          a.onclick = closeMenu;
-        });
-      </script>
+      <h1 class="text-lg sm:text-xl font-bold tracking-[-0.015em]">Strathfield Gym</h1>
+    </div>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-4 lg:gap-9">
+      <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="index.html">Home</a>
+      <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="services.html">Services</a>
+      <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="trainers.html">Trainers</a>
+      <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="membership.html">Membership</a>
+      <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="timetable.html">Timetable</a>
+      <a class="text-white text-base font-medium leading-normal hover:text-[#38e07b] transition-colors" href="contact.html">Contact</a>
+    </nav>
+
+    <a class="hidden md:inline-flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 sm:h-12 px-5 sm:px-6 bg-[#38e07b] text-[#122118] text-sm sm:text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-all" href="#">
+      <span class="truncate">Join Now</span>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button
+      id="navbar-toggle"
+      class="md:hidden flex items-center justify-center text-white focus:outline-none"
+      aria-label="Open menu"
+      aria-controls="navbar-mobile"
+      aria-expanded="false"
+    >
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </header>
+
+  <!-- Page content demo -->
+  <main class="px-4 sm:px-8 md:px-10 py-10 space-y-6">
+    <h2 class="text-2xl font-semibold">Welcome</h2>
+    <p class="text-white/80 max-w-2xl">This is a demo page to show the mobile hamburger working with Tailwind transitions, overlay, accessibility attributes, and proper scroll locking.</p>
+    <div class="h-[1200px] border border-[#264532] rounded-xl p-6 text-white/70">
+      Long content to demonstrate scroll lock…
+    </div>
+  </main>
+
+  <!-- Overlay -->
+  <div
+    id="navbar-overlay"
+    class="fixed inset-0 z-30 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Mobile Menu -->
+  <aside
+    id="navbar-mobile"
+    class="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-[#122118] z-40 shadow-lg transform translate-x-full transition-transform duration-300 md:hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation"
+  >
+    <div class="flex items-center justify-between px-4 py-4 border-b border-[#264532]">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8">
+          <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+            <g clip-path="url(#mclip0_6_535)">
+              <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+            </g>
+            <defs>
+              <clipPath id="mclip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="text-white text-lg font-bold tracking-[-0.015em]">Strathfield Gym</h2>
+      </div>
+      <button id="navbar-close" class="text-white focus:outline-none" aria-label="Close menu">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-2 px-6 py-6">
+      <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="index.html">Home</a>
+      <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="services.html">Services</a>
+      <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="trainers.html">Trainers</a>
+      <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="membership.html">Membership</a>
+      <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="timetable.html">Timetable</a>
+      <a class="text-white text-base font-medium py-2 border-b border-[#264532] hover:text-[#38e07b] transition-colors" href="contact.html">Contact</a>
+
+      <a class="flex min-w-[90px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-[#38e07b] text-[#122118] text-sm font-bold tracking-wide transition-transform hover:scale-105 mt-4" href="#">
+        <span class="truncate">Join Now</span>
+      </a>
+    </nav>
+  </aside>
+
+  <script>
+    const toggleBtn   = document.getElementById('navbar-toggle');
+    const closeBtn    = document.getElementById('navbar-close');
+    const mobileMenu  = document.getElementById('navbar-mobile');
+    const overlay     = document.getElementById('navbar-overlay');
+    const body        = document.body;
+
+    const openMenu = () => {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+
+      overlay.classList.remove('pointer-events-none');
+      overlay.classList.add('opacity-100');
+
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      body.classList.add('overflow-hidden'); // lock scroll
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+
+      overlay.classList.add('pointer-events-none');
+      overlay.classList.remove('opacity-100');
+
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      body.classList.remove('overflow-hidden'); // unlock scroll
+    };
+
+    // Button handlers
+    if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+    if (closeBtn)  closeBtn.addEventListener('click', closeMenu);
+
+    // Close on overlay click
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+    // Close on link click
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // If resizing to desktop, ensure menu/overlay are closed
+    const handleResize = () => {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        closeMenu();
+      }
+    };
+    window.addEventListener('resize', handleResize);
+  </script>
 </body>
 </html>
