@@ -105,12 +105,17 @@
 </div>
 </footer>
 </div>
+<!-- Load external navbar -->
 <script>
+  // Load navbar.html into #navbar
   fetch('navbar.html')
     .then(r => r.text())
     .then(html => {
       document.getElementById('navbar').innerHTML = html;
+      // Re-initialize navbar JS after loading
+      if (window.initNavbar) window.initNavbar();
     })
     .catch(err => console.error('Failed to load navbar:', err));
 </script>
+<script src="navbar.js"></script>
 </body></html>
