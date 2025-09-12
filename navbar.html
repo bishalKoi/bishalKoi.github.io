@@ -4,15 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Strathfield Gym</title>
-
-  <!-- Tailwind (CDN for demo) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Material Symbols -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;700" rel="stylesheet"/>
-  <style>
-    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  </style>
 </head>
 <body class="bg-[#0e1a13] text-white">
   <!-- Header -->
@@ -97,69 +88,6 @@
       </a>
     </nav>
   </aside>
-
-  <script>
-    const toggleBtn   = document.getElementById('navbar-toggle');
-    const closeBtn    = document.getElementById('navbar-close');
-    const mobileMenu  = document.getElementById('navbar-mobile');
-    const overlay     = document.getElementById('navbar-overlay');
-    const body        = document.body;
-
-    let lastFocus = null;
-
-    const openMenu = () => {
-      lastFocus = document.activeElement;
-
-      mobileMenu.classList.remove('translate-x-full');
-      mobileMenu.classList.add('translate-x-0');
-
-      overlay.classList.remove('pointer-events-none');
-      overlay.classList.replace('opacity-0','opacity-100'); // <-- swap, don't stack
-
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      body.classList.add('overflow-hidden'); // lock scroll
-
-      // move focus to close button for accessibility
-      closeBtn?.focus();
-    };
-
-    const closeMenu = () => {
-      mobileMenu.classList.add('translate-x-full');
-      mobileMenu.classList.remove('translate-x-0');
-
-      overlay.classList.add('pointer-events-none');
-      overlay.classList.replace('opacity-100','opacity-0'); // <-- swap back
-
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      body.classList.remove('overflow-hidden'); // unlock scroll
-
-      // restore focus to the opener if possible
-      lastFocus?.focus?.();
-    };
-
-    // Button handlers
-    toggleBtn?.addEventListener('click', openMenu);
-    closeBtn?.addEventListener('click', closeMenu);
-
-    // Close on overlay click
-    overlay?.addEventListener('click', closeMenu);
-
-    // Close on link click
-    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // If resizing to desktop, ensure menu/overlay are closed
-    const handleResize = () => {
-      if (window.matchMedia('(min-width: 768px)').matches) {
-        closeMenu();
-      }
-    };
-    window.addEventListener('resize', handleResize);
-  </script>
 </body>
 </html>
 
