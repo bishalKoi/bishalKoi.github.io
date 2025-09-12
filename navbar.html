@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Strathfield Gym</title>
 
-  <!-- Tailwind (CDN for demo; for prod, use a build step) -->
+  <!-- Tailwind (CDN for demo) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Material Symbols -->
@@ -23,9 +23,7 @@
           <g clip-path="url(#clip0_6_535)">
             <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
           </g>
-          <defs>
-            <clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
-          </defs>
+          <defs><clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath></defs>
         </svg>
       </div>
       <h1 class="text-lg sm:text-xl font-bold tracking-[-0.015em]">Strathfield Gym</h1>
@@ -88,9 +86,7 @@
             <g clip-path="url(#mclip0_6_535)">
               <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
             </g>
-            <defs>
-              <clipPath id="mclip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
-            </defs>
+            <defs><clipPath id="mclip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath></defs>
           </svg>
         </div>
         <h2 class="text-white text-lg font-bold tracking-[-0.015em]">Strathfield Gym</h2>
@@ -121,15 +117,22 @@
     const overlay     = document.getElementById('navbar-overlay');
     const body        = document.body;
 
+    let lastFocus = null;
+
     const openMenu = () => {
+      lastFocus = document.activeElement;
+
       mobileMenu.classList.remove('translate-x-full');
       mobileMenu.classList.add('translate-x-0');
 
       overlay.classList.remove('pointer-events-none');
-      overlay.classList.add('opacity-100');
+      overlay.classList.replace('opacity-0','opacity-100'); // <-- swap, don't stack
 
       toggleBtn.setAttribute('aria-expanded', 'true');
       body.classList.add('overflow-hidden'); // lock scroll
+
+      // move focus to close button for accessibility
+      closeBtn?.focus();
     };
 
     const closeMenu = () => {
@@ -137,18 +140,21 @@
       mobileMenu.classList.remove('translate-x-0');
 
       overlay.classList.add('pointer-events-none');
-      overlay.classList.remove('opacity-100');
+      overlay.classList.replace('opacity-100','opacity-0'); // <-- swap back
 
       toggleBtn.setAttribute('aria-expanded', 'false');
       body.classList.remove('overflow-hidden'); // unlock scroll
+
+      // restore focus to the opener if possible
+      lastFocus?.focus?.();
     };
 
     // Button handlers
-    if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
-    if (closeBtn)  closeBtn.addEventListener('click', closeMenu);
+    toggleBtn?.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenu);
 
     // Close on overlay click
-    if (overlay) overlay.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
 
     // Close on link click
     mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
